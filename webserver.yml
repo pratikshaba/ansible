@@ -1,0 +1,25 @@
+---
+- name: Deploy simple web server
+  hosts: web
+  become: yes
+
+  tasks:
+    - name: Install Apache
+      yum:
+        name: httpd
+        state: present
+
+    - name: Start and enable Apache
+      service:
+        name: httpd
+        state: started
+        enabled: yes
+
+    - name: Create index.html
+      copy:
+        content: |
+          <html>
+          <h1>Hello from Ansible 🚀</h1>
+          </html>
+        dest: /var/www/html/index.html
+

@@ -1,0 +1,6 @@
+[web]
+ec2-user@<13.206.195.98>
+
+[all:vars]
+ansible_ls/frk.pem
+ansible_python_interpreter=/usr/bin/python3
